@@ -25,7 +25,7 @@ docker-compose.yml:
 ```yaml
 services:
   packer:
-    image: cmdlabs/packer-utils:1.3.3
+    image: cmdlabs/packer-utils:1.0.0
     volumes:
-      - .:/packer:Z
+      - .:/work:Z
 ```

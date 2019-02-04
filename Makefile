@@ -1,5 +1,5 @@
-PACKER_VERSION = 1.3.3
-IMAGE_NAME ?= cmdlabs/packer-utils:$(PACKER_VERSION)
+VERSION = 1.0.0
+IMAGE_NAME ?= cmdlabs/packer-utils:$(VERSION)
 
 dockerBuild:
 	docker build -t $(IMAGE_NAME) .
@@ -8,11 +8,11 @@ pull:
 	docker pull $(IMAGE_NAME)
 
 shell:
-	docker run --rm -it -v $(PWD):/opt/app:Z -w /opt/app $(IMAGE_NAME) sh
+	docker run --rm -it -v $(PWD):/work:Z -w /work --entrypoint '' $(IMAGE_NAME) /bin/sh
 
 tag:
-	-git tag -d $(PACKER_VERSION)
-	-git push origin :refs/tags/$(PACKER_VERSION)
-	git tag $(PACKER_VERSION)
-	git push origin $(PACKER_VERSION)
+	# -git tag -d $(VERSION)
+	# -git push origin :refs/tags/$(VERSION)
+	git tag $(VERSION)
+	git push origin $(VERSION)
 

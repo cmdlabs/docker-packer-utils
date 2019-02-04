@@ -13,9 +13,9 @@ RUN sha256sum -cs packer_${PACKER_VERSION}_SHA256SUMS
 RUN unzip packer_${PACKER_VERSION}_linux_amd64.zip -d /bin
 RUN rm -f packer_${PACKER_VERSION}_linux_amd64.zip
 
-RUN mkdir -p /packer
+RUN mkdir -p /work
 
-WORKDIR /packer
+WORKDIR /work
 ENTRYPOINT ["packer"]
 
 CMD ["--help"]
