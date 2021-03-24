@@ -1,6 +1,6 @@
 IMAGE_NAME ?= cmdlabs/packer-utils
 
-RELEASE_VERSION = 1.6.6
+RELEASE_VERSION = 1.7.0
 BUILD_VERSION ?= testing
 
 ifdef CI_COMMIT_REF_NAME
@@ -22,7 +22,7 @@ build:
 PHONY: build
 
 test:
-	docker run --rm --entrypoint=packer $(IMAGE_NAME):$(BUILD_VERSION) --help
+	docker run --rm --entrypoint=packer $(IMAGE_NAME):$(BUILD_VERSION) version
 	docker run --rm --entrypoint=ansible $(IMAGE_NAME):$(BUILD_VERSION) --version
 	@echo "All tests completed successfully"
 PHONY: test
