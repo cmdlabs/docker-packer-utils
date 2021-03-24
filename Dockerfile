@@ -1,7 +1,6 @@
 FROM alpine:latest
 
-ENV PACKER_VERSION=1.6.6
-ENV PACKER_SHA256SUM=721d119fd70e38d6f2b4ccd8a39daf6b4d36bf5f7640036acafcaaa967b00c3b
+ENV PACKER_VERSION=1.7.0
 
 RUN apk add --update git bash wget openssl curl ansible
 
